@@ -189,7 +189,7 @@ public class UploadCatalogs extends ActionSupport {
 	
 	i = 0;
 	try {
-	  if (tmpCat != null) {
+	  if (obsCat != null) {
 	    String tfilename = obsCatFileName;
 	    log.debug("receive file " + tfilename);
 	    File destFile = new File(storePath, tfilename);
