@@ -1,0 +1,17 @@
+
+linux版的postgresql默认无法直接远程访问其数据库
+因此，需要修改postgreSQL数据库配置来实现远程访问。
+具体操作如下：
+修改/etc/postgresql/11/main/postgresql.conf
+在最后添加用户参数：
+listen_address = ‘*’，注意不要被注释掉
+启用密码验证
+#password_encryption = on 修改为 password_encryption = on
+修改/etc/postgresql/11/main/pg_hba.conf文件的内容：
+可访问的用户ip段
+在文件末尾加入：host  all  all  0.0.0.0/0  md5
+重启postgreSQL数据库：
+service postgresl restart
+启动成功后，再在远程连接
+
+GRANT ALL PRIVILEGES ON DATABASE dbname TO dbuser;
