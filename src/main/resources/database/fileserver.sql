@@ -18,7 +18,7 @@ Date: 2019-03-14 15:30:45
 -- ----------------------------
 -- Sequence structure for muf_id_seq
 -- ----------------------------
-DROP SEQUENCE "muf_id_seq";
+DROP SEQUENCE IF EXISTS "muf_id_seq";
 CREATE SEQUENCE "muf_id_seq"
  INCREMENT 1
  MINVALUE 1
@@ -30,7 +30,7 @@ SELECT setval('"public"."muf_id_seq"', 8, true);
 -- ----------------------------
 -- Sequence structure for ui_id_seq
 -- ----------------------------
-DROP SEQUENCE "ui_id_seq";
+DROP SEQUENCE IF EXISTS "ui_id_seq";
 CREATE SEQUENCE "ui_id_seq"
  INCREMENT 1
  MINVALUE 1
